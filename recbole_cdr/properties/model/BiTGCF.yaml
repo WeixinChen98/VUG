@@ -1,0 +1,18 @@
+embedding_size: 64
+n_layers: 2
+reg_weight: 1e-3
+lambda_source: 0.8
+lambda_target: 0.8
+connect_way: concat
+drop_rate: 0.3
+is_transfer: True
+
+
+
+# learning_rate: 0.0005
+# n_layers: 2
+# connect_way: mean
+# lambda_source: 0.8
+# lambda_target: 0.8
+# drop_rate: 0.1
+# reg_weight: 0.01

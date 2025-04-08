@@ -1,0 +1,14 @@
+user_embedding_size: 64
+source_item_embedding_size: 64
+target_item_embedding_size: 64
+# share_embedding_size: 32
+# alpha: 0.5
+# reg_weight: 1e-4
+train_epochs: ["BOTH:300"]
+# train_epochs: ["TARGET:300"]
+
+
+learning_rate: 0.0005
+share_embedding_size: 16
+alpha: 0.1
+reg_weight: 0.0001

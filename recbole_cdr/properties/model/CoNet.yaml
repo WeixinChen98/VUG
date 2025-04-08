@@ -1,0 +1,9 @@
+embedding_size: 64
+# reg_weight: 1e-3
+# mlp_hidden_size: [64,32,16,8]
+mlp_hidden_size: [64,32]
+is_transfer: True
+
+learning_rate: 0.005
+# mlp_hidden_size: [64,32,16,8]
+reg_weight: 0.01
