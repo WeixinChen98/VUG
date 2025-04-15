@@ -1,1 +1,40 @@
-state: ERROR
+field_separator: ","
+source_domain:
+  dataset: EpinionsElec
+  data_path: './recbole_cdr/dataset'
+  USER_ID_FIELD: user_id
+  ITEM_ID_FIELD: item_id
+  RATING_FIELD: rating
+  TIME_FIELD: timestamp
+  NEG_PREFIX: neg_
+  LABEL_FIELD: label
+  load_col:
+    inter: [user_id, item_id, rating]
+  user_inter_num_interval: "[1,inf)"
+  item_inter_num_interval: "[1,inf)"
+  val_interval:
+    rating: "[3,inf)"
+  drop_filter_field: True
+
+target_domain:
+  dataset: EpinionsGame
+  data_path: './recbole_cdr/dataset'
+  USER_ID_FIELD: user_id
+  ITEM_ID_FIELD: item_id
+  RATING_FIELD: rating
+  TIME_FIELD: timestamp
+  NEG_PREFIX: neg_
+  LABEL_FIELD: label
+  load_col:
+    inter: [user_id, item_id, rating]
+  user_inter_num_interval: "[1,inf)"
+  item_inter_num_interval: "[1,inf)"
+  val_interval:
+    rating: "[3,inf)"
+  drop_filter_field: True
+
+
+epochs: 500
+train_batch_size: 4096
+eval_batch_size: 409600000
+valid_metric: NDCG@10
