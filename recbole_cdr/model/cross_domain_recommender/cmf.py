@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time   : 2022/3/8
-# @Author : Zihan Lin
-# @Email  : zhlin@ruc.edu.cn
 
 r"""
 CMF

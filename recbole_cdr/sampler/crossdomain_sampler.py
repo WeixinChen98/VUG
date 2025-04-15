@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time   : 2022/3/12
-# @Author : Zihan Lin
-# @Email  : zhlin@ruc.edu.cn
-# @File   : crossdomain_sampler.py
 
 """
 recbole_cdr.sampler

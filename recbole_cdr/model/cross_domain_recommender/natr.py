@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time   : 2022/5/21
-# @Author : Shanlei Mu
-# @Email  : slmu@ruc.edu.cn
 
 r"""
 NATR

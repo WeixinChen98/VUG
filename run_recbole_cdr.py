@@ -1,7 +1,3 @@
-# @Time   : 2022/3/11
-# @Author : Zihan Lin
-# @Email  : zhlin@ruc.edu.cn
-
 import argparse
 
 from recbole_cdr.quick_start import run_recbole_cdr

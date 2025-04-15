@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time   : 2022/5/13
-# @Author : Zihan Lin
-# @Email  : zhlin@ruc.edu.cn
 
 r"""
 SSCDR

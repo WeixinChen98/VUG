@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time   : 2022/4/8
-# @Author : Gaowei Zhang
-# @Email  : 1462034631@qq.com
 
 r"""
 EMCDR

@@ -1,10 +1,3 @@
-# @Time   : 2022/3/12
-# @Author : zihan Lin
-# @Email  : zhlin@ruc.edu.cn
-# UPDATE
-# @Time   : 2022/4/9
-# @Author : Gaowei Zhang
-# @email  : 1462034631@qq.com
 
 r"""
 recbole_cdr.trainer.trainer

@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time   : 2022/3/22
-# @Author : Zihan Lin
-# @Email  : zhlin@ruc.edu.cn
 
 r"""
 DTCDR

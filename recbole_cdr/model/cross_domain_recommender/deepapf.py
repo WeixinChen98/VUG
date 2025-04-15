@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time   : 2022/3/29
-# @Author : Zihan Lin
-# @Email  : zhlin@ruc.edu.cn
 
 r"""
 DeepAPF

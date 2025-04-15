@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time   : 2022/3/21 15:52
-# @Author : Zihan Lin
-# @Email  : zhlin@ruc.edu.cn
-# @File   : run_hyper.py
-
 import argparse
 
 from recbole_cdr.trainer import HyperTuning
