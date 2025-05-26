@@ -43,7 +43,7 @@ To help users understand the structure of the repository and locate the implemen
 
 - **Loss Function**:  
   Located in: `./recbole_cdr/model/cross_domain_recommender/utils.py`  
-  This file implements the fairness constraint loss.
+  This file implements the constraint loss.
 
 - **Attention-Based Generator**:  
   Located in: `./recbole_cdr/model/cross_domain_recommender/attention.py`  
@@ -56,11 +56,46 @@ The configuration files define the dataset and hyperparameter settings. Example 
 ### Example Config File: `Epinions.yaml`
 
 ```yaml
-dataset: Epinions
-embedding_size: 64
-learning_rate: 0.001
-batch_size: 256
-epochs: 100
+field_separator: ","
+source_domain:
+  dataset: EpinionsElec
+  data_path: '/home/comp/cswxchen/code/RecBole-CDR-main/recbole_cdr/dataset'
+  USER_ID_FIELD: user_id
+  ITEM_ID_FIELD: item_id
+  RATING_FIELD: rating
+  TIME_FIELD: timestamp
+  NEG_PREFIX: neg_
+  LABEL_FIELD: label
+  load_col:
+    inter: [user_id, item_id, rating]
+  user_inter_num_interval: "[1,inf)"
+  item_inter_num_interval: "[1,inf)"
+  val_interval:
+    rating: "[3,inf)"
+  drop_filter_field: True
+
+target_domain:
+  dataset: EpinionsGame
+  data_path: '/home/comp/cswxchen/code/RecBole-CDR-main/recbole_cdr/dataset'
+  USER_ID_FIELD: user_id
+  ITEM_ID_FIELD: item_id
+  RATING_FIELD: rating
+  TIME_FIELD: timestamp
+  NEG_PREFIX: neg_
+  LABEL_FIELD: label
+  load_col:
+    inter: [user_id, item_id, rating]
+  user_inter_num_interval: "[1,inf)"
+  item_inter_num_interval: "[1,inf)"
+  val_interval:
+    rating: "[3,inf)"
+  drop_filter_field: True
+
+
+epochs: 500
+train_batch_size: 4096
+eval_batch_size: 409600000
+valid_metric: NDCG@10
 ```
 
 To customize experiments, modify the configuration file or provide additional parameters via command-line arguments.
