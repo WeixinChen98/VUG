@@ -59,7 +59,7 @@ The configuration files define the dataset and hyperparameter settings. Example 
 field_separator: ","
 source_domain:
   dataset: EpinionsElec
-  data_path: '/home/comp/cswxchen/code/RecBole-CDR-main/recbole_cdr/dataset'
+  data_path: '/xxx/VUG/recbole_cdr/dataset'
   USER_ID_FIELD: user_id
   ITEM_ID_FIELD: item_id
   RATING_FIELD: rating
@@ -76,7 +76,7 @@ source_domain:
 
 target_domain:
   dataset: EpinionsGame
-  data_path: '/home/comp/cswxchen/code/RecBole-CDR-main/recbole_cdr/dataset'
+  data_path: '/xxx/VUG/recbole_cdr/dataset'
   USER_ID_FIELD: user_id
   ITEM_ID_FIELD: item_id
   RATING_FIELD: rating
