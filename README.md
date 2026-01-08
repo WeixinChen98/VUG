@@ -100,6 +100,22 @@ valid_metric: NDCG@10
 
 To customize experiments, modify the configuration file or provide additional parameters via command-line arguments.
 
+## Citation
+
+If you find our work helpful, please consider citing our paper:
+
+```bibtex
+@inproceedings{chen2025leave,
+  title     = {Leave No One Behind: Fairness-Aware Cross-Domain Recommender Systems for Non-Overlapping Users},
+  author    = {Chen, Weixin and Zhao, Yuhan and Chen, Li and Pan, Weike},
+  year      = 2025,
+  booktitle = {Proceedings of the 19th ACM Conference on Recommender Systems (RecSys'25)},
+  pages     = {226--236}
+}
+```
+
+
+
 ## Acknowledgement
 
 The implementation is based on the open-source recommendation library [RecBole-CDR](https://github.com/RUCAIBox/RecBole-CDR). 
