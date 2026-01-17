@@ -102,7 +102,7 @@ To customize experiments, modify the configuration file or provide additional pa
 
 ## Citation
 
-If you find our work helpful, please consider citing our paper:
+If you find this work helpful, please consider citing our paper:
 
 ```bibtex
 @inproceedings{chen2025leave,
