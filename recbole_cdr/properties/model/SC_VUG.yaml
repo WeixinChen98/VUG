@@ -1,0 +1,32 @@
+# SC-VUG Configuration
+
+# Backbone architecture (same as VUG)
+embedding_size: 64
+n_layers: 2
+reg_weight: 1e-3
+lambda_source: 0.8
+lambda_target: 0.8
+connect_way: concat
+drop_rate: 0.3
+is_transfer: True
+
+# Generator configuration
+user_weight_attn: 0.5
+
+# Enhancement mode for the generated (virtual) source embeddings
+# "asrealsource": inject virtual users into the source domain for GCN propagation
+# "add": add generated embeddings to target-domain user embeddings directly
+enhance_mode: "asrealsource"
+enhance_weight: 1.0
+
+# Adaptive weighting exponent (gamma) for the generator loss:
+#   L = eta^gamma * L_GNLL + (1 - eta)^gamma * L_SMI
+# where eta is the cross-domain user overlap ratio
+adaptive_gamma: 0.5
+
+# Balanced Integration: weight for non-overlapping users in the target BCE loss
+# (1 - balance_weight) is the weight for overlapping users
+balance_weight: 0.7
+
+# Weight of the generator loss in the total target loss
+gen_weight: 0.05

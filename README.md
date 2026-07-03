@@ -6,7 +6,9 @@
 
 
 
-**VUG** is the official implementation for paper "Leave No One Behind: Fairness-Aware Cross-Domain Recommender Systems for Non-Overlapping Users".
+**VUG** is the official implementation for paper "Leave No One Behind: Fairness-Aware Cross-Domain Recommender Systems for Non-Overlapping Users" (RecSys 2025).
+
+> **This branch (`sc-vug`) additionally contains SC-VUG**, the extended version of VUG submitted to ACM Transactions on Recommender Systems (TORS). SC-VUG (Sparsity-Calibrated Virtual User Generation) models virtual users of non-overlapping users as Gaussian distributions, where the variance quantifies the epistemic uncertainty calibrated by the cross-domain user overlap sparsity. See the [SC-VUG section](#sc-vug-extended-version) below.
 
 
 ## Requirements
@@ -99,6 +101,34 @@ valid_metric: NDCG@10
 ```
 
 To customize experiments, modify the configuration file or provide additional parameters via command-line arguments.
+
+## SC-VUG (Extended Version)
+
+**SC-VUG** (Sparsity-Calibrated Virtual User Generation) is the extended version of VUG. Instead of generating deterministic virtual user embeddings, SC-VUG models each virtual user as a Gaussian distribution N(&mu;, &sigma;&sup2;):
+
+- **Dual-View Retrieval**: retrieves user-level and item-level views from overlapping users via learned attention.
+- **Gated Aggregation & Variance Calibration**: fuses the two views into the mean &mu; with a learned gate, and estimates the variance &sigma;&sup2; from the overlap-ratio embedding and the disagreement between the two views.
+- **Uncertainty-Aware Training**: combines a Gaussian Negative Log-Likelihood (GNLL) loss on overlapping users with a Stochastic Manifold Isometry (SMI) loss, adaptively weighted by the overlap ratio, plus Balanced Integration between overlapping and non-overlapping users.
+
+### Running SC-VUG on the Epinions Dataset
+
+```bash
+python run_recbole_cdr.py --model=SC_VUG --config_file=./recbole_cdr/properties/dataset/Epinions.yaml
+```
+
+### Key Files of SC-VUG
+
+- **Model File**:  
+  Located in: `./recbole_cdr/model/cross_domain_recommender/sc_vug.py`  
+  This file contains the implementation of the proposed SC-VUG model, including the GNLL/SMI losses with adaptive weighting and Balanced Integration.
+
+- **Gaussian Generator**:  
+  Located in: `./recbole_cdr/model/cross_domain_recommender/gaussian_generator.py`  
+  This file implements the Dual-View Retrieval, Gated Aggregation, Variance Estimator, and the reparameterization-based Gaussian generator.
+
+- **Model Config**:  
+  Located in: `./recbole_cdr/properties/model/SC_VUG.yaml`  
+  This file contains the default hyperparameters of SC-VUG (e.g., `adaptive_gamma`, `balance_weight`, `gen_weight`).
 
 ## Citation
 
