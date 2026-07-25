@@ -30,3 +30,12 @@ balance_weight: 0.7
 
 # Weight of the generator loss in the total target loss
 gen_weight: 0.05
+
+# ---------------------------------------------------------------------------
+# Hyperparameter search space (all tuned on the validation set by NDCG@10;
+# the values above are the best configuration found).
+# Common training settings use the defaults (learning_rate=0.001,
+# train_batch_size=2048, reg_weight/L2=1e-4); the key SC-VUG hyperparameters
+#   adaptive_gamma (gamma), gen_weight (lambda_gen), balance_weight (w)
+# are grid-searched over [0, 1] with a step size of 0.1.
+# ---------------------------------------------------------------------------

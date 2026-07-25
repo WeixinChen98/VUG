@@ -4,3 +4,13 @@ margin: 1
 mlp_hidden_size: [128]
 train_epochs: ["SOURCE:300","TARGET:300","OVERLAP:300"]
 overlap_batch_size: 100
+
+# ---------------------------------------------------------------------------
+# Hyperparameter search space
+# All hyperparameters are tuned on the validation set (by NDCG@10) and the best
+# configuration is reported. Following the same protocol used for our model,
+# the key weights / regularization coefficients are grid-searched over a broad
+# range, e.g. [0, 1] with a step size of 0.1 for loss/trade-off weights, and
+# {1e-4, 1e-3, 1e-2} for the L2 regularization coefficient. The embedding size
+# is fixed to 64 and the learning rate defaults to 0.001 for all models.
+# ---------------------------------------------------------------------------
